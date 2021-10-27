@@ -1,5 +1,4 @@
 class BankAccount
-
   attr_reader :balance, :statement
 
   def initialize
@@ -18,12 +17,11 @@ class BankAccount
   end
 
   def date
-    date = Time.now.strftime("%d/%m/%Y")
+    date = Time.now.strftime('%d/%m/%Y')
   end
 
   def print_statement
     summary = "date || deposited/withdrawn|| balance\n#{@statement.reverse.join("\n")}"
     print summary
   end
-
 end
