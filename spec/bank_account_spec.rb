@@ -20,4 +20,11 @@ describe BankAccount do
       expect{ subject.withdraw 1 }.to change{ subject.balance }.by -1
     end
   end
+
+  describe '#statement' do
+
+    it 'should display the statement as an array' do 
+      expect(subject.statement).to be_an_instance_of(Array)
+    end
+  end
 end
