@@ -27,4 +27,10 @@ describe BankAccount do
       expect(subject.statement).to be_an_instance_of(Array)
     end
   end
-end
+
+  describe '#print_statement'
+
+    it 'should display the full statement' do 
+      expect {subject.print_statement}.to output.to_stdout
+    end
+  end

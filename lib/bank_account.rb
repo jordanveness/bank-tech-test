@@ -9,12 +9,12 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    statement << ["#{date} || +#{amount} || #{balance}"]
+    @statement << ["#{date} || +#{amount} || #{balance}"]
   end
 
   def withdraw(amount)
     @balance -= amount
-    statement << ["#{date} || -#{amount} || #{balance}"]
+    @statement << ["#{date} || -#{amount} || #{balance}"]
   end
 
   def date
@@ -22,7 +22,7 @@ class BankAccount
   end
 
   def print_statement
-    summary = statement
+    summary = "date || deposited/withdrawn|| balance\n#{@statement.reverse.join("\n")}"
     print summary
   end
 
